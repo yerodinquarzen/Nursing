@@ -1,0 +1,120 @@
+%Beginn der Dokumentenpräambel
+%Zunächst die Klassendeklaration
+\documentclass[	a4paper,
+								BCOR=10mm, 
+								DIV=12, 
+								11pt]
+								{scrbook}
+
+%Paket zur Schriftauswahl
+\usepackage{fontspec}
+
+%Pakete zur Benutzung von Unicode und XeLaTeX
+\usepackage{xltxtra}
+\usepackage{xunicode}
+
+\defaultfontfeatures{Ligatures=TeX}
+%Unicodefähige Schriftart, Kapitälchen via Latin Modern
+%Die Schriften müssen auf dem System als ttf oder otf installiert sein
+\setromanfont[Ligatures=TeX,
+						 SmallCapsFont={Linux Libertine O}
+						 ]{Linux Libertine O}
+\setsansfont[Ligatures=TeX, Scale=MatchLowercase,
+						 SmallCapsFont={Linux Biolinum O}
+						 ]{Linux Biolinum O}
+\setmonofont[Ligatures=TeX, Scale=MatchLowercase,
+						 SmallCapsFont={Linux Libertine Mono O}
+						 ]{Linux Libertine Mono O}
+%Aktivierung der Kapitälchen
+\addfontfeature{Letters=SmallCaps}
+%Deutsche Bezeichnungen der verschiedenen Bestandteile
+\usepackage{polyglossia}
+\setmainlanguage[babelshorthands=true]{german}
+\setotherlanguage[babelshorthands=true]{russian}
+
+\usepackage{supertabular}
+%Absatz-Abstand statt Einrückung
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+%Pakete für Index und Glossar
+\usepackage{imakeidx}
+\usepackage{glossaries}
+%Paket zur Erzeugung von Listings
+\usepackage{listings}
+%Paket zur Nutzung der \verb(atim)-Umgebungen
+\usepackage{fancyvrb}
+%Paket für Fraktur-Schriften
+\usepackage{yfonts}
+%Setzen von Zeilenüberspannenden Tabellenreihen
+\usepackage{multirow}
+%Mehrspaltigkeit
+\usepackage{multicol}
+%Drehen von Tabellenzellen
+\usepackage{rotating}
+%DIN-Bibliothek
+\usepackage{natbib}
+%Mathematische Symbole
+\usepackage{amssymb}
+%Nutzung von TeX-Logos in LuaLaTeX
+\usepackage{metalogo}
+%Nutzung von verbesserten Inhaltsverzeichnissen in KomaScript
+\usepackage{tocbasic}
+\usepackage{scrhack}
+
+%Besserer Umgang mit Grafiken
+\usepackage{graphicx}
+\usepackage{grffile}
+
+%Anpassungen der Marginalien
+\newcommand{\marginlabel}[1]
+{\mbox{}\marginpar{\raggedright\hspace{0pt}\sffamily\scriptsize #1}}
+
+%Richtige Anführungszeichen unter UTF-8
+\let\textquotedbl="
+
+\KOMAoptions{DIV=last}
+%Alles für den Titel
+\title{Strukturen}
+\subtitle{Grundlagen für den geneigten Datenverarbeiter}
+\author{Benjamin Schubert}
+\date{}
+
+%Erstellung des Indexes und Glossares
+\makeglossary
+\makeindex
+
+%erneute Spiegelsatzberechnung
+\KOMAoptions{DIV=last}
+%Nur folgendes Subdokument setzen
+%\includeonly{coding/tex/internationalisierung}
+
+%Start des eigentlichen Dokumentes
+\begin{document}
+
+%\maketitle
+
+%Vorspann
+%\frontmatter
+%Inhaltsverzeichnis
+%\tableofcontents
+
+%\include{vorwort}
+
+%Hauptteil
+%\mainmatter
+
+\include{Einfügung}
+
+%Nachspann
+%\backmatter
+
+%\bibliographystyle{natdin}
+%\bibliography{strukturbib_mathe}
+
+%\listoffigures
+%\listoftables
+%Kennt LuaLaTeX nicht..
+%\printindex
+%\printglossary
+
+\end{document}

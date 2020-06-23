@@ -1,0 +1,6 @@
+version=0.6.0
+typesetter=xelatex
+steps=texpdf
+root=/home/linux/Dokumente/Nursing/0.Master.tex
+
+file=/home/linux/Dokumente/Nursing/Einfügung.tex
